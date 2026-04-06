@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fatec.com.product.models.Product;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 @RestController
 @RequestMapping("/products")
@@ -54,6 +57,12 @@ public class ProductController {
         @GetMapping
         public ArrayList<Product> getProducts() {
             return products;
+        }
+
+        @PostMapping
+        public Product createProduct(@RequestBody Product product) {
+            products.add(product);
+            return product;
         }
 
 }
