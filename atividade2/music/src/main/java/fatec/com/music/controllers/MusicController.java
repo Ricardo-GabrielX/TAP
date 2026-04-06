@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import fatec.com.music.models.Music;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -71,5 +73,11 @@ public class MusicController {
     @GetMapping
     public ArrayList<Music> getMusics() {
         return musics;
+    }
+
+    @PostMapping
+    public Music addMusic(@RequestBody Music music) {
+        musics.add(music);
+        return music;
     }
 }
