@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fatec.com.product.models.Product;
+import fatec.com.product.models.SpecialProduct;
+
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -37,10 +39,20 @@ public class ProductController {
             p3.setName("Tablet");
             p3.setPrice(1500.00);
             p3.setDescription("Tablet android 64gb");
-          
+            
+            SpecialProduct sp1 = new SpecialProduct();
+            sp1.setId(4L);
+            sp1.setName("Notebook Especial");
+            sp1.setPrice(4000.00);
+            sp1.setDescription("Notebook i9 1TB 32GB");
+            sp1.setBrand("Dell");
+            sp1.setModel("XPS 13");
+
             products.add(p1);
             products.add(p2);   
             products.add(p3);
+            products.add(sp1);
+            
         }
 
         @GetMapping("/{id}")
