@@ -15,23 +15,25 @@ Registrar minha evolução na disciplina, mantendo um histórico bem estruturado
 ## 📂 Estrutura das Atividades
 
 ### `Atividade1/`
-Implementação de um **ProductsController**, responsável por retornar uma lista de produtos em formato **JSON**.
+Implementação de projeto **Products**, dedicado a entender métodos de http utilizando api rest no java spring boot, retornando consultas em **JSON**.
 
 Inclui:
 - Criação do endpoint  
 - Estruturação do modelo `Product`  
 - Retorno de dados fixos para testes  
-- Exercício introdutório ao uso de controllers no Spring
+- Exercício introdutório ao uso de controllers no Spring 
+- Exerício sobre API REST no spring boot.
 
 ---
 
 ### `Atividade2/`
-Implementação de um **MusicsController**, retornando uma lista de músicas também em **JSON**.
+Implementação de projeto **Musics**, treinando conceitos de api rest, por ora somente em **JSON**.
 
 Abrange:
 - Criação do modelo `Music`  
 - Endpoint fornecendo dados simulados  
 - Prática de manipulação de listas e responses HTTP
+- Exerício sobre API REST no spring boot.
 
 ---
 
