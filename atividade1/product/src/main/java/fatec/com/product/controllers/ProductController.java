@@ -2,16 +2,20 @@ package fatec.com.product.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.DeleteExchange;
 
 import fatec.com.product.models.Product;
 import fatec.com.product.models.SpecialProduct;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 @RestController
@@ -75,6 +79,31 @@ public class ProductController {
         public Product createProduct(@RequestBody Product product) {
             products.add(product);
             return product;
+        }
+
+        // método de atualização de produto
+        @PutMapping("/{id}")
+        public String putUpdateProduct(@PathVariable long id, @RequestBody Product UpdateProduct) {
+            for(Product p : products) {
+                if(p.getId() == id) {
+                    p.setName(UpdateProduct.getName());
+                    p.setPrice(UpdateProduct.getPrice());
+                    p.setDescription(UpdateProduct.getDescription());
+                }
+            }
+            
+            return null;
+        }
+
+        @DeleteMapping("/{id}")
+        public String deleteProduct(@PathVariable long id) {
+            boolean removed = products.removeIf(p -> p.getId() == id);
+
+            if (removed) {
+                return "Produto com ID " + id + " removido com sucesso.";
+            } else {
+                return "Produto com ID " + id + " não encontrado.";
+            }
         }
 
 }
