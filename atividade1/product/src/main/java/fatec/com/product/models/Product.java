@@ -6,6 +6,9 @@ public class Product {
     private String name;
     private Double price;
     private String description;
+    private Category category; // Isso faz o produto ter zero ou uma categoria.
+
+    // private Category category = new Category() -> Isso obriga a produto ter 1 categoria, o que não é verdade, no nosso caso. Isso mudaria a representação do diagrama de classe
 
     public Product(){
 
@@ -44,7 +47,9 @@ public class Product {
         this.description = description;
     }
 
+    private void setCategory(Category category) {
+        this.category = category;
+    }
     
     
-
 }
