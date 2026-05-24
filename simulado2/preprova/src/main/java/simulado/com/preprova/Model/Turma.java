@@ -8,7 +8,7 @@ public class Turma {
     private String codigo;
     private String nome;
     List<Aluno> alunos = new ArrayList<>(); 
-
+    private Professor professor;
 
     public Turma() {
 
@@ -46,5 +46,17 @@ public class Turma {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+
+    public void adicionarAluno(Aluno aluno) {
+        if (!alunos.contains(aluno)) {
+            alunos.add(aluno);
+            aluno.setTurma(this);
+        }
+    }    
+
+    public void removerAluno(Aluno aluno){
+        if(alunos.remove(aluno)) {
+            aluno.setTurma(null);
+        }
+    }
 }
