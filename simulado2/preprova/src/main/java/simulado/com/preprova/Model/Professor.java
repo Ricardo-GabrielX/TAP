@@ -1,4 +1,4 @@
-package simulado.com.preprova.Model;
+package simulado.com.preprova.model;
 
 
 

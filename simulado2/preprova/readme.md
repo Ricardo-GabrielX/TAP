@@ -2,7 +2,7 @@
 
 Crie uma aplicação para conforme o diagrama abaixo
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 Uma escola deseja desenvolver um sistema para gerenciar pessoas e turmas.
 

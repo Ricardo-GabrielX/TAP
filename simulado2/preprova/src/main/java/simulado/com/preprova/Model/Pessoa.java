@@ -1,4 +1,4 @@
-package simulado.com.preprova.Model;
+package simulado.com.preprova.model;
 
 public class Pessoa {
     private int id;
@@ -9,24 +9,24 @@ public class Pessoa {
     }
 
     public Pessoa(int id, String nome) {
-        id = this.id;
-        nome = this.nome;
+        this.id = id;
+        this.nome = nome;
     }
 
     public int getId() {
         return id;
     }
 
-    public int setId(int id) {
-        return this.id;
+    public void setId(int id) {
+        id = this.id;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public String setNome(String nome) {
-        return this.nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
 

@@ -1,19 +1,33 @@
-package simulado.com.preprova.Model;
+package simulado.com.preprova.model;
 
 public class Aluno extends Pessoa {
-    private int idMatricula;
+    private String matricula;
+    private Turma turma;
 
     public Aluno() {
-
+        super();
     }
 
-    public Aluno(int id, String nome, int idMatricula) {
+    public Aluno(int id, String nome, String matricula, Turma turma) {
         super(id, nome);
-        idMatricula = this.idMatricula;
+        this.matricula = matricula;
+        this.turma = turma;
     }
 
-    public int getIdMatricula() {
-        return idMatricula;
+    public Turma getTurma() { 
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
 }
