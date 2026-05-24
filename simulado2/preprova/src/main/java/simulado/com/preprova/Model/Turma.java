@@ -2,7 +2,7 @@ package simulado.com.preprova.model;
 
 public class Turma {
     private String codigo;
-    public String nome;
+    private String nome;
     private Aluno aluno;
 
     public Turma() {
@@ -29,6 +29,14 @@ public class Turma {
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
 }
