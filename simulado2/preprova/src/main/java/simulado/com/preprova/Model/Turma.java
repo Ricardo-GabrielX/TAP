@@ -31,20 +31,20 @@ public class Turma {
         this.codigo = codigo;
     }
 
-    // public Aluno getAluno() {
-    //     return aluno;
-    // }
-
-    // public void setAluno(Aluno aluno) {
-    //     this.aluno = aluno;
-    // }
-
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 
     public void adicionarAluno(Aluno aluno) {
