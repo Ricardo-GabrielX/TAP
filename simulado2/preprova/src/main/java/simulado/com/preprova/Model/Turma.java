@@ -1,18 +1,26 @@
 package simulado.com.preprova.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Turma {
     private String codigo;
     private String nome;
-    private Aluno aluno;
+    List<Aluno> alunos = new ArrayList<>(); 
+
 
     public Turma() {
 
     }
 
-    public Turma(String codigo, String nome, Aluno aluno) {
+    public Turma(String codigo, String nome) {
         this.codigo = codigo;
         this.nome = nome;
-        this.aluno = aluno;
+    }
+
+    public List<Aluno> getAlunos() {
+        return Collections.unmodifiableList(alunos);
     }
 
     public String getCodigo() {
@@ -23,13 +31,13 @@ public class Turma {
         this.codigo = codigo;
     }
 
-    public Aluno getAluno() {
-        return aluno;
-    }
+    // public Aluno getAluno() {
+    //     return aluno;
+    // }
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
+    // public void setAluno(Aluno aluno) {
+    //     this.aluno = aluno;
+    // }
 
     public String getNome() {
         return nome;
