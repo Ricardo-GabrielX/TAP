@@ -1,13 +1,9 @@
 package simulado.com.preprova.model;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Aluno extends Pessoa {
     private String matricula;
     private Turma turma;
-    private List<Aluno> alunos = new ArrayList<>();
-    private Professor professor;
 
     public Aluno() {
         super();
