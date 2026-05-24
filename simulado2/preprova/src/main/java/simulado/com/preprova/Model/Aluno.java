@@ -10,10 +10,6 @@ public class Aluno extends Pessoa {
 
     public Aluno(int id, String nome, String matricula, Turma turma) {
         super(id, nome);
-
-        if(turma == null) {
-            throw new IllegalArgumentException("Aluno deve ter uma turma");
-        }
         this.matricula = matricula;
         this.turma = turma;
     }
@@ -23,9 +19,6 @@ public class Aluno extends Pessoa {
     }
 
     public void setTurma(Turma turma) {
-        if(turma == null) {
-            throw new IllegalArgumentException("Aluno deve ter uma turma.");
-        }
         this.turma = turma;
     }
 
