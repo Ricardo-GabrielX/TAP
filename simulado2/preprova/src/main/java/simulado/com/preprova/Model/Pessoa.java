@@ -18,7 +18,7 @@ public class Pessoa {
     }
 
     public void setId(int id) {
-        id = this.id;
+        this.id = id;
     }
 
     public String getNome() {
