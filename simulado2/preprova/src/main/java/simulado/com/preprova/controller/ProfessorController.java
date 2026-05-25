@@ -24,9 +24,9 @@ public class ProfessorController {
         return "professor adicionado com sucesso!!";
     }
 
-    @GetMapping
-    public ArrayList<Professor> getProfesores() {
-        return professores;
-    }
+    // @GetMapping
+    // public ArrayList<Professor> getProfesores() {
+    //     return professores;
+    // }
     
 }
