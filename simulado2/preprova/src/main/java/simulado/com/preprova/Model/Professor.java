@@ -1,13 +1,11 @@
 package simulado.com.preprova.model;
 
-
-
+import java.util.ArrayList;
 public class Professor extends Pessoa{
     private String especialidade;
+    private ArrayList<Turma> turmas = new ArrayList<>();
 
-    public Professor() {
-
-    }
+    public Professor() {}
 
     public Professor(int id, String nome, String especialidade) {
         super(id, nome);
@@ -20,5 +18,13 @@ public class Professor extends Pessoa{
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public ArrayList<Turma> getTurmas() {
+        return turmas;
+    }
+
+    public void setTurmas(ArrayList<Turma> turmas) {
+        this.turmas = turmas;
     }
 }
