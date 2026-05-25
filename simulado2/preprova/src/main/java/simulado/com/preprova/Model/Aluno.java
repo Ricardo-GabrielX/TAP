@@ -5,9 +5,7 @@ public class Aluno extends Pessoa {
     private String matricula;
     private Turma turma;
 
-    public Aluno() {
-        super();
-    }
+    public Aluno() {}
 
     public Aluno(int id, String nome, String matricula, Turma turma) {
         super(id, nome);
