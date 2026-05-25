@@ -1,13 +1,11 @@
 package simulado.com.preprova.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class Turma {
     private String codigo;
     private String nome;
-    List<Aluno> alunos = new ArrayList<>(); 
+    ArrayList<Aluno> alunos = new ArrayList<>(); 
     private Professor professor;
 
     public Turma() {
@@ -19,8 +17,8 @@ public class Turma {
         this.nome = nome;
     }
 
-    public List<Aluno> getAlunos() {
-        return Collections.unmodifiableList(alunos);
+    public ArrayList<Aluno> getAlunos() {
+        return alunos;
     }
 
     public String getCodigo() {
@@ -47,16 +45,4 @@ public class Turma {
         this.professor = professor;
     }
 
-    public void adicionarAluno(Aluno aluno) {
-        if (!alunos.contains(aluno)) {
-            alunos.add(aluno);
-            aluno.setTurma(this);
-        }
-    }    
-
-    public void removerAluno(Aluno aluno){
-        if(alunos.remove(aluno)) {
-            aluno.setTurma(null);
-        }
-    }
 }
