@@ -4,9 +4,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import simulado.com.preprova.model.Aluno;
+import simulado.com.preprova.model.Turma;
 
 import java.util.ArrayList;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,29 +22,37 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AlunoController {
     
     private ArrayList<Aluno> alunos = new ArrayList<>();
+    private ArrayList<Turma> turmas;
 
 
-    public AlunoController() {
-        // id, nome, matricula
-
-        Aluno a1 = new Aluno(1, "alex", "1", null);
-        Aluno a2 = new Aluno(2, "junior", "2", null);
-        Aluno a3 = new Aluno(3, "maria", "3", null);
-        alunos.add(a1);
-        alunos.add(a2);
-        alunos.add(a3);
+    public AlunoController(ArrayList<Turma> turmas) {
+        this.turmas = turmas;
     }
    
-
     @GetMapping
     public ArrayList<Aluno> getAlunos() {
         return alunos;
     }
 
     @PostMapping
-    public String createAluno(@RequestBody Aluno aluno ) {
+    public ResponseEntity<String> createAluno(@RequestBody Aluno aluno ) {
+        if (aluno.getTurma() == null || aluno.getTurma().getCodigo() == null ) {
+            return ResponseEntity.badRequest().body("Aluno deve pertencer a uma turma.");
+        }
+
+        String codigoTurma = aluno.getTurma().getCodigo();
+        Turma turma = turmas.stream()
+                .filter(t -> t.getCodigo().equals(codigoTurma))
+                .findFirst()
+                .orElse(null);
+
+        if (turma == null) {
+            return ResponseEntity.badRequest().body("turma com código " + codigoTurma + " não encontrada.");
+        }
+
+        turma.adicionarAluno(aluno);
         alunos.add(aluno);
-        return "Aluno adicionado com sucesso";
+        return ResponseEntity.ok("Aluno adiconando com sucesso");
     }
 
     @DeleteMapping("/{id}")
