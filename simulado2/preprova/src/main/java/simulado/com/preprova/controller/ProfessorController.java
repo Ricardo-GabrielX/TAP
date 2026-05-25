@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import simulado.com.preprova.model.Professor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
-@RequestMapping("professores")
+@RequestMapping("/professores")
 public class ProfessorController {
     
     private ArrayList<Professor> professores = new ArrayList<>();
@@ -20,4 +23,10 @@ public class ProfessorController {
         professores.add(professor);
         return "professor adicionado com sucesso!!";
     }
+
+    @GetMapping
+    public ArrayList<Professor> getProfesores() {
+        return professores;
+    }
+    
 }
